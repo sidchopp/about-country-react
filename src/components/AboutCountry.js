@@ -20,33 +20,41 @@ function AboutCountry() {
   const whereAmI = async function () {
     // to make sure loading is true when we are fetching data
     setLoading(true);
-    const pos = await getPosition();
-    //console.log('value of my position:', pos);
 
-    const { latitude: lat, longitude: lng } = pos.coords;
-    //console.log('My position:', lat, lng);
+    try {
+      const pos = await getPosition();
+      //console.log('value of my position:', pos);
 
-    const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
-    if (!responseGeo.ok) throw new Error("Problem getting location data")
-    const dataGeo = await responseGeo.json();
-    //console.log('Response from dataGeo:', dataGeo);
+      const { latitude: lat, longitude: lng } = pos.coords;
+      //console.log('My position:', lat, lng);
 
-    const response = await fetch(`https://restcountries.eu/rest/v2/name/${dataGeo.country}?fullText=true`);
-    if (!response.ok) throw new Error("Problem getting country")
-    //console.log(response);
-    const data = await response.json();
-    console.log(data);
-    // after getting our data, we want loading to stop
-    setLoading(false)
+      const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+      if (!responseGeo.ok) throw new Error("Problem getting location data")
+      const dataGeo = await responseGeo.json();
+      //console.log('Response from dataGeo:', dataGeo);
 
-    setLocation(data)
+      const response = await fetch(`https://restcountries.eu/rest/v2/name/${dataGeo.country}?fullText=true`);
+      if (!response.ok) throw new Error("Problem getting country")
+      //console.log(response);
+      const data = await response.json();
+      console.log(data);
+      // after getting our data, we want loading to stop
+      setLoading(false)
+
+      setLocation(data)
 
 
 
-    const city = `At present you are in ${dataGeo.city}, ${dataGeo.country}`;
-    console.log(city);
-    //return city;
-    setMyCity(city)
+      const city = `At present you are in ${dataGeo.city}, ${dataGeo.country}`;
+      console.log(city);
+      //return city;
+      setMyCity(city)
+
+    } catch (err) {
+      // if there is error we want to stop loading
+      setLoading(false)
+      console.log('This is the error:', err.message);
+    }
 
 
   }

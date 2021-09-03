@@ -41,11 +41,11 @@ function AboutCountry() {
   const mapLocation = location.map((country) => {
     return (
 
-      < div >
 
-        <CountryCard key={country.name} cardInfo={country} />
 
-      </div >
+      <CountryCard key={country.name} cardInfo={country} />
+
+
 
     )
 

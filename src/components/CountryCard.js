@@ -3,24 +3,23 @@ import { Card, Icon, Image, Segment, Container } from 'semantic-ui-react'
 
 const CountryCard = ({ cardInfo, cardCity }) => (
   <Container style={{ marginTop: "50px" }} text textAlign='center'>
-    <div>{cardCity}</div>
+    <div> <Icon name='hand point right' />{cardCity}</div>
     <Card fluid centered>
-      {console.log(cardInfo)}
       <Image src={cardInfo.flag} wrapped ui={false} />
       <Card.Content>
-        <Card.Header > {cardInfo.name}</Card.Header>
+        <Card.Header ><Icon name='globe' /> {cardInfo.name}</Card.Header>
         <Card.Meta><Icon name='star' /> {cardInfo.capital}</Card.Meta>
         <Card.Description>
-          <div> <Icon name='globe' />Region: {cardInfo.region}</div>
-          <div> <Icon name='location arrow' />Sub-Region: {cardInfo.subregion}</div>
+          <div> <Icon name='th large' />Region: {cardInfo.region}</div>
+          <div> <Icon name='th' />Sub-Region: {cardInfo.subregion}</div>
           <div><Icon name='users' />Population : {+(cardInfo.population / 1000000).toFixed(1)} Million</div>
           <div><Icon name='money bill alternate' />Currency:  {cardInfo.currencies[0].name} ({cardInfo.currencies[0].symbol})</div>
-          <div><Icon name='chat' />Main Language: {cardInfo.languages[0].name}</div>
+          <div><Icon name='comments' />Main Language: {cardInfo.languages[0].name}</div>
           <div><Icon name='expand' />Shares border with: {cardInfo.borders}</div>
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <Icon name='hourglass' />
+        <Icon name='clock' />
         Time Zone(s): {cardInfo.timezones.map((time) => < > {time}</>)
         }
       </Card.Content>

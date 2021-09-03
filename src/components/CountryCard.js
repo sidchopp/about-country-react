@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, Icon, Image, Segment, Container } from 'semantic-ui-react'
 
 const CountryCard = ({ cardInfo, cardCity }) => (
-
   <Container style={{ marginTop: "50px" }} text textAlign='center'>
     <div>{cardCity}</div>
     <Card fluid centered>
@@ -21,11 +20,9 @@ const CountryCard = ({ cardInfo, cardCity }) => (
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <a>
-          <Icon name='hourglass' />
-          Time Zone(s): {cardInfo.timezones.map((time) => <> {time}</>)
-          }
-        </a>
+        <Icon name='hourglass' />
+        Time Zone(s): {cardInfo.timezones.map((time) => < > {time}</>)
+        }
       </Card.Content>
     </Card >
   </Container>

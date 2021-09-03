@@ -15,7 +15,7 @@ const CountryCard = ({ cardInfo, cardCity }) => (
           <div><Icon name='users' />Population : {+(cardInfo.population / 1000000).toFixed(1)} Million</div>
           <div><Icon name='money bill alternate' />Currency:  {cardInfo.currencies[0].name} ({cardInfo.currencies[0].symbol})</div>
           <div><Icon name='comments' />Main Language: {cardInfo.languages[0].name}</div>
-          <div><Icon name='expand' />Shares border with: {cardInfo.borders}</div>
+          <div><Icon name='expand' />Shares border with: {cardInfo.borders.toString()}</div>
         </Card.Description>
       </Card.Content>
       <Card.Content extra>

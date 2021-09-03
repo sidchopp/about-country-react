@@ -43,7 +43,7 @@ function AboutCountry() {
       if (!response.ok) throw new Error("Problem getting country")
       //console.log(response);
       const data = await response.json();
-      //console.log(data);
+      console.log(data);
 
       // after getting our data, we want loading to stop
       setLoading(false)

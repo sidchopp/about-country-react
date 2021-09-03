@@ -42,10 +42,9 @@ function AboutCountry() {
     return (
 
       < div >
-        {console.log(country)}
-        <CountryCard />
-        <div>{country.name}</div>
-        <div>{country.borders}</div>
+
+        <CountryCard key={country.name} cardInfo={country} />
+
       </div >
 
     )

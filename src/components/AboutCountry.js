@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import CountryCard from './CountryCard';
-import NeighbourCard from './NeighbourCard';
 
 function AboutCountry() {
 
@@ -37,7 +36,7 @@ function AboutCountry() {
 
 
 
-    const city = `You are in ${dataGeo.city}, ${dataGeo.country}`;
+    const city = `At present you are in ${dataGeo.city}, ${dataGeo.country}`;
     console.log(city);
     //return city;
     setMyCity(city)
@@ -52,7 +51,7 @@ function AboutCountry() {
   const mapLocation = location.map((country) => {
     return (
       <>
-        <CountryCard key={country.name} cardInfo={country} />
+        <CountryCard key={country.name} cardInfo={country} cardCity={myCity} />
 
       </>
     )
@@ -60,7 +59,6 @@ function AboutCountry() {
 
   return (
     <div>
-      <h1>{myCity}</h1>
       {mapLocation}
     </div>
   )

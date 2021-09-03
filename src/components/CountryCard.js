@@ -1,10 +1,10 @@
 import React from 'react'
 import { Card, Icon, Image, Segment, Container } from 'semantic-ui-react'
 
-const CountryCard = ({ cardInfo }) => (
-
+const CountryCard = ({ cardInfo, cardCity }) => (
 
   <Container style={{ marginTop: "50px" }} text textAlign='center'>
+    <div>{cardCity}</div>
     <Card fluid centered>
       {console.log(cardInfo)}
       <Image src={cardInfo.flag} wrapped ui={false} />
@@ -24,15 +24,11 @@ const CountryCard = ({ cardInfo }) => (
         <a>
           <Icon name='hourglass' />
           Time Zone(s): {cardInfo.timezones.map((time) => <> {time}</>)
-
           }
         </a>
       </Card.Content>
     </Card >
   </Container>
-
-
-
 )
 
 export default CountryCard;

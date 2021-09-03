@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
 import CountryCard from './CountryCard';
+import Loading from './Loading';
 
 function AboutCountry() {
 
   const [location, setLocation] = useState([]);
   const [myCity, setMyCity] = useState('');
+  const [loading, setLoading] = useState(true);
 
   // Promisifying the Geolocation API
   const getPosition = function () {
@@ -14,7 +16,10 @@ function AboutCountry() {
     });
   };
 
+
   const whereAmI = async function () {
+    // to make sure loading is true when we are fetching data
+    setLoading(true);
     const pos = await getPosition();
     //console.log('value of my position:', pos);
 
@@ -31,6 +36,8 @@ function AboutCountry() {
     //console.log(response);
     const data = await response.json();
     console.log(data);
+    // after getting our data, we want loading to stop
+    setLoading(false)
 
     setLocation(data)
 
@@ -56,6 +63,12 @@ function AboutCountry() {
       </>
     )
   })
+
+  if (loading) {
+    return (
+      <Loading />
+    )
+  }
 
   return (
     <div>

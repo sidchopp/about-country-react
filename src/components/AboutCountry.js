@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 import CountryCard from './CountryCard';
+import NeighbourCard from './NeighbourCard';
+
 function AboutCountry() {
 
   const [location, setLocation] = useState([]);
+  const [myCity, setMyCity] = useState('');
 
   // Promisifying the Geolocation API
   const getPosition = function () {
@@ -29,7 +32,15 @@ function AboutCountry() {
     //console.log(response);
     const data = await response.json();
     console.log(data);
+
     setLocation(data)
+
+
+
+    const city = `You are in ${dataGeo.city}, ${dataGeo.country}`;
+    console.log(city);
+    //return city;
+    setMyCity(city)
 
 
   }
@@ -40,18 +51,16 @@ function AboutCountry() {
 
   const mapLocation = location.map((country) => {
     return (
+      <>
+        <CountryCard key={country.name} cardInfo={country} />
 
-
-
-      <CountryCard key={country.name} cardInfo={country} />
-
-
-
+      </>
     )
-
   })
+
   return (
     <div>
+      <h1>{myCity}</h1>
       {mapLocation}
     </div>
   )

@@ -10,7 +10,7 @@ const CountryCard = ({ cardInfo }) => (
       <Image src={cardInfo.flag} wrapped ui={false} />
       <Card.Content>
         <Card.Header > {cardInfo.name}</Card.Header>
-        <Card.Meta>{cardInfo.capital}</Card.Meta>
+        <Card.Meta><Icon name='star' /> {cardInfo.capital}</Card.Meta>
         <Card.Description>
           <div> <Icon name='globe' />Region: {cardInfo.region}</div>
           <div> <Icon name='location arrow' />Sub-Region: {cardInfo.subregion}</div>
@@ -23,10 +23,7 @@ const CountryCard = ({ cardInfo }) => (
       <Card.Content extra>
         <a>
           <Icon name='hourglass' />
-          Time Zone(s): {cardInfo.timezones.map((time) => {
-
-            return <> {time}</>
-          })
+          Time Zone(s): {cardInfo.timezones.map((time) => <> {time}</>)
 
           }
         </a>

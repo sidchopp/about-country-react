@@ -19,9 +19,7 @@ const CountryCard = ({ cardInfo, cardCity }) => (
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <Icon name='clock' />
-        Time Zone(s): {cardInfo.timezones.map((time) => < > {time}</>)
-        }
+        <Icon name='clock' /> Time Zone(s): {cardInfo.timezones.toString()}
       </Card.Content>
     </Card >
   </Container>

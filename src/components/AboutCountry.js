@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-
+import CountryCard from './CountryCard';
 function AboutCountry() {
 
   const [location, setLocation] = useState([]);
@@ -40,8 +40,14 @@ function AboutCountry() {
 
   const mapLocation = location.map((country) => {
     return (
-      // console.log(country)
-      <div>{country.name}</div>
+
+      < div >
+        {console.log(country)}
+        <CountryCard />
+        <div>{country.name}</div>
+        <div>{country.borders}</div>
+      </div >
+
     )
 
   })

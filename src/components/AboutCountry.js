@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Icon } from 'semantic-ui-react'
 
 // components
 import CountryCard from './CountryCard';
@@ -52,7 +53,7 @@ function AboutCountry() {
       setLocation(data)
 
       // To show the city of user
-      const city = `At present you are in ${dataGeo.city}, ${dataGeo.country}`;
+      const city = `You are in ${dataGeo.city}, ${dataGeo.country}`;
       console.log(city);
 
       //Updating the myCity state with present city of user

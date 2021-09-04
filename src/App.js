@@ -1,8 +1,13 @@
 import AboutCountry from './components/AboutCountry'
+import Nav from './components/Nav';
+
 
 function App() {
   return (
-    <div><AboutCountry /></div>
+    <div>
+      <Nav />
+      <AboutCountry />
+    </div>
   );
 }
 

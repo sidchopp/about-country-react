@@ -3,7 +3,7 @@ import { Card, Icon, Image, Segment, Container, Header } from 'semantic-ui-react
 
 const CountryCard = ({ cardInfo, cardCity }) => (
   <Container style={{ marginTop: "50px" }} text textAlign='center'>
-    <Header > <Icon name='hand point right' />{cardCity}</Header >
+    <Header >Your Location : {cardCity}</Header >
     <Card fluid centered>
       <Image src={cardInfo.flag} wrapped ui={false} />
       <Card.Content>

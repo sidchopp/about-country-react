@@ -53,7 +53,7 @@ function AboutCountry() {
       setLocation(data)
 
       // To show the city of user
-      const city = `You are in ${dataGeo.city}, ${dataGeo.country}`;
+      const city = `${dataGeo.city}, ${dataGeo.country}`;
       console.log(city);
 
       //Updating the myCity state with present city of user

@@ -10,6 +10,7 @@ function AboutCountry() {
   const [location, setLocation] = useState([]);
   const [myCity, setMyCity] = useState('');
   const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
 
   // Promisifying the Geolocation API
   const getPosition = function () {
@@ -63,6 +64,8 @@ function AboutCountry() {
       // if there is error we want to stop loading
       setLoading(false)
       console.log('This is the error:', err.message);
+      const error = `ERROR: "${err.message}". Please allow the site to access your location and refresh the page. 😊`;
+      setErrorMessage(error);
     }
   }
 
@@ -83,7 +86,8 @@ function AboutCountry() {
 
   return (
     <div>
-      {mapLocation}
+      {/* Conditional rendering of error and Location */}
+      {errorMessage ? errorMessage : mapLocation}
     </div>
   )
 }

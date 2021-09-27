@@ -31,21 +31,33 @@ function AboutCountry() {
 
       // changing the names by de structuring the pos object that we receive
       const { latitude: lat, longitude: lng } = pos.coords;
+      //console.log(lat, lng);
 
       // Reverse geocoding(i.e  converting a location as described by geographic coordinates (latitude, longitude) to a human-readable address or place) 
-      const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`, {
-        mode: "no-cors"
-      })
+      // const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+      const responseGeo = await fetch(`https://us1.locationiq.com/v1/reverse.php?key=pk.54613f9762655306fcea44c566aadc1c&lat=${lat}&lon=${lng}&format=json`)
+      console.log(responseGeo);
       if (!responseGeo.ok) throw new Error("Problem getting location data")
       const dataGeo = await responseGeo.json();
       //console.log('Response from dataGeo:', dataGeo);
+      console.log('Response from dataGeo.address:', dataGeo.address);
+      console.log('Response from dataGeo.address.country:', dataGeo.address.country);
 
       // Country data we receive directly from dataGeo
-      const response = await fetch(`https://restcountries.eu/rest/v2/name/${dataGeo.country}?fullText=true`);
+
+      //OLD API
+      // const response = await fetch(`https://restcountries.eu/rest/v2/name/${dataGeo.address.country}?fullText=true`, {
+      //   mode: "no-cors"
+      // });
+
+      // NEW API
+      const response = await fetch(`https://api.countrylayer.com/v2/name/${dataGeo.address.country}?access_key=7e3bf3e7bce9aef99d58809cd09a3edb&fullText=true`, {
+        mode: "no-cors"
+      });
 
       // to handle error in fetch call. If there is error, it won't run further after this line below
       if (!response.ok) throw new Error("Problem getting country")
-      //console.log(response);
+      console.log(response);
       const data = await response.json();
       console.log(data);
 
@@ -95,3 +107,7 @@ function AboutCountry() {
 }
 
 export default AboutCountry;
+
+//pk.54613f9762655306fcea44c566aadc1c
+
+// 7e3bf3e7bce9aef99d58809cd09a3edb

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Icon, Image, Segment, Container, Header } from 'semantic-ui-react'
+import { Card, Icon, Image, Container, Header } from 'semantic-ui-react'
 
 const CountryCard = ({ cardInfo, cardCity }) => (
   <Container style={{ marginTop: "50px" }} text textAlign='center'>
@@ -50,3 +50,4 @@ const CountryCard = ({ cardInfo, cardCity }) => (
 )
 
 export default CountryCard;
+

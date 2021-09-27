@@ -33,7 +33,9 @@ function AboutCountry() {
       const { latitude: lat, longitude: lng } = pos.coords;
 
       // Reverse geocoding(i.e  converting a location as described by geographic coordinates (latitude, longitude) to a human-readable address or place) 
-      const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+      const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`, {
+        mode: "no-cors"
+      })
       if (!responseGeo.ok) throw new Error("Problem getting location data")
       const dataGeo = await responseGeo.json();
       //console.log('Response from dataGeo:', dataGeo);

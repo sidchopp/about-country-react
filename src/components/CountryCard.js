@@ -4,8 +4,10 @@ import { Card, Icon, Image, Container, Header } from 'semantic-ui-react'
 const CountryCard = ({ cardInfo, cardCity }) => (
   <Container style={{ marginTop: "50px" }} text textAlign='center'>
     <Header >
-      <div>Your Location : {cardCity}</div>
-      <div></div>
+      <div style={{ margin: '40px' }}>Your are very close to {cardCity}</div>
+      <div style={{ marginTop: '80px' }}>
+        <i>More info about the Country you are in at moment.. </i>
+      </div>
     </Header >
     <Card fluid centered>
       <Image src={cardInfo.flags[0]} wrapped ui={false} />

@@ -45,7 +45,8 @@ function AboutCountry() {
 
       // To show the city of user
 
-      const city = `${dataGeo.address.neighbourhood}, ${dataGeo.address.city}. ${dataGeo.address.country}`;
+      // const city = `${dataGeo.address.neighbourhood}, ${dataGeo.address.city}. ${dataGeo.address.country}`;
+      const city = `${dataGeo.display_name}`
       // console.log(city);
 
 

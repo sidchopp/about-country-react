@@ -5,9 +5,9 @@ const CountryCard = ({ cardInfo, cardCity }) => (
   <Container style={{ marginTop: "50px" }} text textAlign='center'>
     <Header >Your Location : {cardCity}</Header >
     <Card fluid centered>
-      <Image src={cardInfo.flag} wrapped ui={false} />
+      <Image src={cardInfo.flags[0]} wrapped ui={false} />
       <Card.Content>
-        <Card.Header style={{ margin: '15px', fontSize: '30px' }} ><Icon name='globe' /> {cardInfo.name}</Card.Header>
+        <Card.Header style={{ margin: '15px', fontSize: '30px' }} ><Icon name='globe' /> {cardInfo.name.official}</Card.Header>
         <Card.Meta style={{ margin: '10px', fontSize: '20px' }}><Icon name='star' /> {cardInfo.capital}</Card.Meta>
         <Card.Description>
           <div>
@@ -22,18 +22,18 @@ const CountryCard = ({ cardInfo, cardCity }) => (
           </div>
           <div>
             <Icon name='users' />
-            <span><b>  Population <Icon name='caret right' /></b></span>
-            <span>{+(cardInfo.population / 1000000).toFixed(1)} Million</span>
+            {/* <span><b>  Population <Icon name='caret right' /></b></span>
+            <span>{+(cardInfo.population / 1000000).toFixed(1)} Million</span> */}
           </div>
           <div>
             <Icon name='money bill alternate' />
             <span><b> Currency<Icon name='caret right' /></b></span>
-            <span>{cardInfo.currencies[0].name} ({cardInfo.currencies[0].symbol})</span>
+            <span>{cardInfo.currencies.CAD.name} ({cardInfo.currencies.CAD.symbol})</span>
           </div>
           <div>
             <Icon name='comments' />
-            <span><b>  Main Language <Icon name='caret right' /></b></span>
-            <span>{cardInfo.languages[0].name}</span>
+            {/* <span><b>  Main Language <Icon name='caret right' /></b></span>
+            <span>{cardInfo.languages}</span> */}
           </div>
           <div>
             <Icon name='expand' />
@@ -42,9 +42,9 @@ const CountryCard = ({ cardInfo, cardCity }) => (
           </div>
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>
+      {/* <Card.Content extra>
         <Icon name='clock' /> Time Zone(s): {cardInfo.timezones.toString()}
-      </Card.Content>
+      </Card.Content> */}
     </Card >
   </Container>
 )

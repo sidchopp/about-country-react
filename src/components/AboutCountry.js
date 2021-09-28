@@ -40,26 +40,31 @@ function AboutCountry() {
       if (!responseGeo.ok) throw new Error("Problem getting location data")
       const dataGeo = await responseGeo.json();
       //console.log('Response from dataGeo:', dataGeo);
-      console.log('Response from dataGeo.address:', dataGeo.address);
-      console.log('Response from dataGeo.address.country:', dataGeo.address.country);
+      // console.log('Response from dataGeo.address:', dataGeo.address);
+      // console.log('Response from dataGeo.address.country:', dataGeo.address.country);
+
+      // To show the city of user
+
+      const city = `${dataGeo.address.city}, ${dataGeo.address.country}`;
+      // console.log(city);
+
 
       // Country data we receive directly from dataGeo
 
       //OLD API
-      // const response = await fetch(`https://restcountries.eu/rest/v2/name/${dataGeo.address.country}?fullText=true`, {
+      const response = await fetch(`https://restcountries.com/v3/name/${dataGeo.address.country}?fullText=true`);
+      // console.log(response);
+
+      // // NEW API
+      // const response = await fetch(`https://api.countrylayer.com/v2/name/${dataGeo.address.country}?access_key=7e3bf3e7bce9aef99d58809cd09a3edb&fullText=true`, {
       //   mode: "no-cors"
       // });
 
-      // NEW API
-      const response = await fetch(`https://api.countrylayer.com/v2/name/${dataGeo.address.country}?access_key=7e3bf3e7bce9aef99d58809cd09a3edb&fullText=true`, {
-        mode: "no-cors"
-      });
-
       // to handle error in fetch call. If there is error, it won't run further after this line below
       if (!response.ok) throw new Error("Problem getting country")
-      console.log(response);
+
       const data = await response.json();
-      console.log(data);
+      // console.log('Data:', data[0]);
 
       // after getting our data, we want loading to stop
       setLoading(false)
@@ -67,9 +72,6 @@ function AboutCountry() {
       // Updating our  location state with data
       setLocation(data)
 
-      // To show the city of user
-      const city = `${dataGeo.city}, ${dataGeo.country}`;
-      console.log(city);
 
       //Updating the myCity state with present city of user
       setMyCity(city)
@@ -88,7 +90,9 @@ function AboutCountry() {
   }, [])
 
   const mapLocation = location.map((country) => {
-    return <CountryCard key={country.name} cardInfo={country} cardCity={myCity} />
+    console.log("country is ", country);
+    console.log(country.flags[0]);
+    return <CountryCard key={country.name.official} cardInfo={country} cardCity={myCity} />
   })
 
   // if data is not fetched,show loader

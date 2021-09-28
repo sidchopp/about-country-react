@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Icon } from 'semantic-ui-react'
+//import { Icon } from 'semantic-ui-react'
 
 // components
 import CountryCard from './CountryCard';
@@ -36,10 +36,10 @@ function AboutCountry() {
       // Reverse geocoding(i.e  converting a location as described by geographic coordinates (latitude, longitude) to a human-readable address or place) 
       // const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
       const responseGeo = await fetch(`https://us1.locationiq.com/v1/reverse.php?key=pk.54613f9762655306fcea44c566aadc1c&lat=${lat}&lon=${lng}&format=json`)
-      console.log(responseGeo);
+      //console.log(responseGeo);
       if (!responseGeo.ok) throw new Error("Problem getting location data")
       const dataGeo = await responseGeo.json();
-      console.log('Response from dataGeo:', dataGeo);
+      // console.log('Response from dataGeo:', dataGeo);
       // console.log('Response from dataGeo.address:', dataGeo.address);
       // console.log('Response from dataGeo.address.country:', dataGeo.address.country);
 
@@ -65,7 +65,7 @@ function AboutCountry() {
       if (!response.ok) throw new Error("Problem getting country")
 
       const data = await response.json();
-      // console.log('Data:', data[0]);
+      //console.log('Data:', data);
 
       // after getting our data, we want loading to stop
       setLoading(false)

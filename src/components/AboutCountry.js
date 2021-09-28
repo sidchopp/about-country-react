@@ -39,19 +39,19 @@ function AboutCountry() {
       console.log(responseGeo);
       if (!responseGeo.ok) throw new Error("Problem getting location data")
       const dataGeo = await responseGeo.json();
-      //console.log('Response from dataGeo:', dataGeo);
+      console.log('Response from dataGeo:', dataGeo);
       // console.log('Response from dataGeo.address:', dataGeo.address);
       // console.log('Response from dataGeo.address.country:', dataGeo.address.country);
 
       // To show the city of user
 
-      const city = `${dataGeo.address.city}, ${dataGeo.address.country}`;
+      const city = `${dataGeo.address.neighbourhood}, ${dataGeo.address.city}. ${dataGeo.address.country}`;
       // console.log(city);
 
 
       // Country data we receive directly from dataGeo
 
-      //OLD API
+
       const response = await fetch(`https://restcountries.com/v3/name/${dataGeo.address.country}?fullText=true`);
       // console.log(response);
 
@@ -90,8 +90,7 @@ function AboutCountry() {
   }, [])
 
   const mapLocation = location.map((country) => {
-    console.log("country is ", country);
-    console.log(country.flags[0]);
+    // console.log("country is ", country);
     return <CountryCard key={country.name.official} cardInfo={country} cardCity={myCity} />
   })
 
@@ -112,6 +111,3 @@ function AboutCountry() {
 
 export default AboutCountry;
 
-//pk.54613f9762655306fcea44c566aadc1c
-
-// 7e3bf3e7bce9aef99d58809cd09a3edb

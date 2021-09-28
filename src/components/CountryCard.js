@@ -3,7 +3,10 @@ import { Card, Icon, Image, Container, Header } from 'semantic-ui-react'
 
 const CountryCard = ({ cardInfo, cardCity }) => (
   <Container style={{ marginTop: "50px" }} text textAlign='center'>
-    <Header >Your Location : {cardCity}</Header >
+    <Header >
+      <div>Your Location : {cardCity}</div>
+      <div></div>
+    </Header >
     <Card fluid centered>
       <Image src={cardInfo.flags[0]} wrapped ui={false} />
       <Card.Content>
@@ -21,9 +24,9 @@ const CountryCard = ({ cardInfo, cardCity }) => (
             <span>{cardInfo.subregion}</span>
           </div>
           <div>
-            <Icon name='users' />
-            {/* <span><b>  Population <Icon name='caret right' /></b></span>
-            <span>{+(cardInfo.population / 1000000).toFixed(1)} Million</span> */}
+            <Icon name='area chart' />
+            <span><b>  Area <Icon name='caret right' /></b></span>
+            <span> About {+(cardInfo.area / 1000000).toFixed(1)} Million km square</span>
           </div>
           <div>
             <Icon name='money bill alternate' />
@@ -31,7 +34,7 @@ const CountryCard = ({ cardInfo, cardCity }) => (
             <span>{cardInfo.currencies.CAD.name} ({cardInfo.currencies.CAD.symbol})</span>
           </div>
           <div>
-            <Icon name='comments' />
+            {/* <Icon name='comments' /> */}
             {/* <span><b>  Main Language <Icon name='caret right' /></b></span>
             <span>{cardInfo.languages}</span> */}
           </div>

@@ -73,6 +73,14 @@ function AboutCountry() {
       // Updating our  location state with data
       setLocation(data)
 
+      // For Voice message to the User
+      const speak = (msg) => {
+        const sp = new SpeechSynthesisUtterance(msg);
+        [sp.voice] = speechSynthesis.getVoices();
+        speechSynthesis.speak(sp);
+      };
+
+      speak(`Hello User, you are at ${city}`)
 
       //Updating the myCity state with present city of user
       setMyCity(city)

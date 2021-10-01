@@ -39,7 +39,7 @@ function AboutCountry() {
       //console.log(responseGeo);
       if (!responseGeo.ok) throw new Error("Problem getting location data")
       const dataGeo = await responseGeo.json();
-      console.log('Response from dataGeo:', dataGeo);
+      // console.log('Response from dataGeo:', dataGeo);
       // console.log('Response from dataGeo.address:', dataGeo.address);
       // console.log('Response from dataGeo.address.country:', dataGeo.address.country);
 
@@ -47,7 +47,7 @@ function AboutCountry() {
 
       // const city = `${dataGeo.address.neighbourhood}, ${dataGeo.address.city}. ${dataGeo.address.country}`;
       const city = `${dataGeo.display_name}`
-      console.log(city);
+      // console.log(city);
 
 
       // Country data we receive directly from dataGeo
@@ -81,9 +81,11 @@ function AboutCountry() {
       };
 
       const speakAddress = `${dataGeo.address.house_number} ${dataGeo.address.road} ${dataGeo.address.neighbourhood} ${dataGeo.address.city}`
-      console.log(speakAddress);
+      // console.log(speakAddress);
 
-      speak(`Hello, you are at ${speakAddress}`)
+      // speak(`Hello, you are at ${speakAddress}`)
+
+      speak(`Hi there, you are at ${city}`)
 
       //Updating the myCity state with present city of user
       setMyCity(city)

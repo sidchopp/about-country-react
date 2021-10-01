@@ -37,11 +37,11 @@ const CountryCard = ({ cardInfo, cardCity }) => (
             <span><b>  Area <Icon name='caret right' /></b></span>
             <span> About {+(cardInfo.area / 1000000).toFixed(1)} Million km sq.</span>
           </div>
-          <div>
+          {/* <div>
             <Icon name='money bill alternate' />
             <span><b> Currency<Icon name='caret right' /></b></span>
             <span>{cardInfo.currencies.CAD.name} ({cardInfo.currencies.CAD.symbol})</span>
-          </div>
+          </div> */}
           <div>
             {/* <Icon name='comments' /> */}
             {/* <span><b>  Main Language <Icon name='caret right' /></b></span>

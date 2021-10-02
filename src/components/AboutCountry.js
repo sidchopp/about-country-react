@@ -80,7 +80,7 @@ function AboutCountry() {
         speechSynthesis.speak(sp);
       };
 
-      const speakAddress = `${dataGeo.address.house_number} ${dataGeo.address.road} ${dataGeo.address.neighbourhood} ${dataGeo.address.city}`
+      // const speakAddress = `${dataGeo.address.house_number} ${dataGeo.address.road} ${dataGeo.address.neighbourhood} ${dataGeo.address.city}`
       // console.log(speakAddress);
 
       // speak(`Hello, you are at ${speakAddress}`)

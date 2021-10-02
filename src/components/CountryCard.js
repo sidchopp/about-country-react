@@ -5,8 +5,7 @@ import { Card, Icon, Image, Container, Header } from 'semantic-ui-react'
 import '../App.css'
 
 function CountryCard({ cardInfo, cardCity }) {
-
-
+  // console.log(Object.keys(cardInfo.currencies));
   return (
     <Container style={{ marginTop: "50px" }} text textAlign='center'>
       {/* <Card raised className='font' style={{ padding: '10px' }} fluid centered>
@@ -43,7 +42,7 @@ function CountryCard({ cardInfo, cardCity }) {
             <div>
               <Icon name='money bill alternate' />
               <span><b> Currency<Icon name='caret right' /></b></span>
-              <span>{cardInfo.currencies.CAD.name} ({cardInfo.currencies.CAD.symbol})</span>
+              <span>{Object.keys(cardInfo.currencies)}</span>
             </div>
             <div>
               {/* <Icon name='comments' /> */}

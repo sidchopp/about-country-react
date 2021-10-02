@@ -1,11 +1,11 @@
 import React from 'react'
-import { Card, Icon, Image, Container, Header } from 'semantic-ui-react'
+import { Card, Icon, Image, Container, Header, Button, Divider } from 'semantic-ui-react'
 // CSS
 
 import '../App.css'
 
 function CountryCard({ cardInfo, cardCity }) {
-  // console.log(Object.keys(cardInfo.currencies));
+
   return (
     <Container style={{ marginTop: "50px" }} text textAlign='center'>
       {/* <Card raised className='font' style={{ padding: '10px' }} fluid centered>
@@ -59,6 +59,10 @@ function CountryCard({ cardInfo, cardCity }) {
         {/* <Card.Content extra>
         <Icon name='clock' /> Time Zone(s): {cardInfo.timezones.toString()}
       </Card.Content> */}
+        <Divider />
+        <Button secondary as='a' href={Object.values(cardInfo.maps)[0]} rel="noreferrer" target='_blank'>
+          Google Map
+        </Button>
       </Card >
     </Container >
   )

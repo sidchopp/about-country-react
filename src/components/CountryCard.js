@@ -11,13 +11,14 @@ function CountryCard({ cardInfo, cardCity }) {
       <Card raised className='font' style={{ padding: '25px' }} fluid centered>
         <Header> Your Location</Header >
         <Header.Subheader><Icon name="map marker alternate" />{cardCity}.</Header.Subheader>
+        <Divider horizontal > Your Country</Divider>
         <Image style={{ margin: '15px' }} src={cardInfo.flags[0]} wrapped ui={false} />
         <Card.Content>
           <Card.Header className='uppercase' style={{ margin: '15px', fontSize: '30px' }} ><Icon name='globe' />
             {cardInfo.name.official}
           </Card.Header>
           <Card.Meta style={{ margin: '10px', fontSize: '20px' }}><Icon name='star' />
-            {cardInfo.capital}
+            Capital <Icon name='caret right' /> {cardInfo.capital}
           </Card.Meta>
           <Card.Description>
             <div>

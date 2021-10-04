@@ -7,7 +7,7 @@ function Footer() {
     <div>
       <Header as='h1'  >
         <a style={{ color: 'black' }} href='https://sid-projects.netlify.app/' target='_blank' rel="noreferrer" >
-          <span className="footer-name">Sid{" "}.</span>
+          <span className="footer-name">Sid{" "}</span>
         </a>
       </Header>
       <div>

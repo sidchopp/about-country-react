@@ -25,13 +25,11 @@ function AboutCountry() {
     setLoading(true);
 
     try {
-
       // Geo Location
       const pos = await getPosition();
 
       // changing the names by de structuring the pos object that we receive
       const { latitude: lat, longitude: lng } = pos.coords;
-      //console.log(lat, lng);
 
       // Reverse geocoding(i.e  converting a location as described by geographic coordinates (latitude, longitude) to a human-readable address or place) 
       // const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
@@ -40,26 +38,12 @@ function AboutCountry() {
       if (!responseGeo.ok) throw new Error("Problem getting location data")
       const dataGeo = await responseGeo.json();
       // console.log('Response from dataGeo:', dataGeo);
-      // console.log('Response from dataGeo.address:', dataGeo.address);
-      // console.log('Response from dataGeo.address.country:', dataGeo.address.country);
 
       // To show the city of user
-
-      // const city = `${dataGeo.address.neighbourhood}, ${dataGeo.address.city}. ${dataGeo.address.country}`;
       const city = `${dataGeo.display_name}`
-      // console.log(city);
-
 
       // Country data we receive directly from dataGeo
-
-
       const response = await fetch(`https://restcountries.com/v3/name/${dataGeo.address.country}?fullText=true`);
-      // console.log(response);
-
-      // // NEW API
-      // const response = await fetch(`https://api.countrylayer.com/v2/name/${dataGeo.address.country}?access_key=7e3bf3e7bce9aef99d58809cd09a3edb&fullText=true`, {
-      //   mode: "no-cors"
-      // });
 
       // to handle error in fetch call. If there is error, it won't run further after this line below
       if (!response.ok) throw new Error("Problem getting country")
@@ -79,11 +63,6 @@ function AboutCountry() {
         [sp.voice] = speechSynthesis.getVoices();
         speechSynthesis.speak(sp);
       };
-
-      // const speakAddress = `${dataGeo.address.house_number} ${dataGeo.address.road} ${dataGeo.address.neighbourhood} ${dataGeo.address.city}`
-      // console.log(speakAddress);
-
-      // speak(`Hello, you are at ${speakAddress}`)
 
       speak(`Hi there, you are at ${city}`)
 

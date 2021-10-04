@@ -8,10 +8,6 @@ function CountryCard({ cardInfo, cardCity }) {
 
   return (
     <Container style={{ marginTop: "50px" }} text textAlign='center'>
-      {/* <Card raised className='font' style={{ padding: '10px' }} fluid centered>
-      <Header  > Your Location</Header >
-      <Header.Subheader><Icon name="map marker alternate" />{cardCity}</Header.Subheader>
-    </Card> */}
       <Card raised className='font' style={{ padding: '25px' }} fluid centered>
         <Header> Your Location</Header >
         <Header.Subheader><Icon name="map marker alternate" />{cardCity}.</Header.Subheader>

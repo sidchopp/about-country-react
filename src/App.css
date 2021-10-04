@@ -2,6 +2,10 @@
   font-family: "Roboto Mono", monospace;
 }
 
+.footer-name {
+  font-family: "Birthstone Bounce", cursive;
+}
+
 .uppercase {
   text-transform: uppercase;
 }

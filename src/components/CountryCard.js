@@ -1,5 +1,9 @@
 import React from 'react'
 import { Card, Icon, Image, Container, Header, Button, Divider } from 'semantic-ui-react'
+
+//Components
+import Footer from './Footer'
+
 // CSS
 
 import '../App.css'
@@ -9,9 +13,15 @@ function CountryCard({ cardInfo, cardCity }) {
   return (
     <Container style={{ marginTop: "50px" }} text textAlign='center'>
       <Card raised className='font' style={{ padding: '25px' }} fluid centered>
-        <Header> Your Location</Header >
-        <Header.Subheader><Icon name="map marker alternate" />{cardCity}.</Header.Subheader>
-        <Divider horizontal > Your Country</Divider>
+        <Divider horizontal><Icon name='map signs' />
+          {" "} Your Location
+        </Divider >
+        <Header.Subheader>
+          <Icon name="map marker alternate" />{cardCity}.
+        </Header.Subheader>
+        <Divider horizontal > <Icon name='compass' />
+          {" "} Your Country
+        </Divider>
         <Image style={{ margin: '15px' }} src={cardInfo.flags[0]} wrapped ui={false} />
         <Card.Content>
           <Card.Header className='uppercase' style={{ margin: '15px', fontSize: '30px' }} ><Icon name='globe' />
@@ -56,10 +66,15 @@ function CountryCard({ cardInfo, cardCity }) {
         {/* <Card.Content extra>
         <Icon name='clock' /> Time Zone(s): {cardInfo.timezones.toString()}
       </Card.Content> */}
-        <Divider />
-        <Button secondary as='a' href={Object.values(cardInfo.maps)[0]} rel="noreferrer" target='_blank'>
+        <Button primary as='a' href={Object.values(cardInfo.maps)[0]} rel="noreferrer" target='_blank'>
           Google Map
         </Button>
+        <Divider />
+
+        {/* Component Import */}
+        <Footer />
+        {/*  */}
+
       </Card >
     </Container >
   )

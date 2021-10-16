@@ -72,7 +72,7 @@ function AboutCountry() {
     } catch (err) {
       // if there is error we want to stop loading
       setLoading(false)
-      console.log('This is the error:', err.message);
+      // console.log('This is the error:', err.message);
       const error = `ERROR: "${err.message}". Please allow the site to access your location and refresh the page. 😊`;
       setErrorMessage(error);
     }
@@ -93,7 +93,6 @@ function AboutCountry() {
       <Loading />
     )
   }
-
   return (
     <div>
       {/* Conditional rendering of error and Location */}

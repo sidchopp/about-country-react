@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Icon, Divider } from 'semantic-ui-react'
+import { Header, Icon, Divider, Popup } from 'semantic-ui-react'
 
 function Footer() {
   return (
@@ -11,9 +11,15 @@ function Footer() {
           target='_blank'
           rel="noreferrer"
         >
-          <span className="footer-name">
-            Sid{" "}
-          </span>
+          <Popup
+            position='right center'
+            content='About Me'
+            trigger={
+              <span className="footer-name">
+                Sid{" "}
+              </span>
+            }
+          />
         </a>
       </Header>
       <div>

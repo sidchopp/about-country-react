@@ -7,9 +7,11 @@ import Footer from './Footer'
 // CSS
 import '../App.css'
 
+
 function CountryCard({ cardInfo, cardCity }) {
   return (
-    <Container style={{ marginTop: "50px" }} text textAlign='center'>
+    // To make container small use "text" attribute
+    <Container style={{ marginTop: "50px" }} >
       <Card raised className='font' style={{ padding: '25px' }} fluid centered>
         <Divider horizontal><Icon name='map signs' />
           {" "} Your Location

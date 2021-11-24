@@ -8,14 +8,13 @@ function AllCountriesCards({ allCountries }) {
   console.log(allCountries);
 
   return (
-    <Container class="ui grid" style={{ marginTop: "50px" }}  >
-      {/* <Card.Group itemsPerRow={1}> */}
-      <Card raised className='font all-country-cards' style={{ padding: '25px' }} centered >
+    <div>
+      <Card raised className='font ' style={{ padding: '25px', margin: '20px' }} >
         <Card.Content>
           <Card.Header className='uppercase' style={{ margin: '15px', fontSize: '30px' }} >
             {allCountries.name}
           </Card.Header>
-          <Card.Meta style={{ margin: '10px', fontSize: '20px' }}>
+          <Card.Meta >
             <Icon name='star' />
             Capital <Icon name='caret right' />
             {allCountries.capital}
@@ -48,7 +47,7 @@ function AllCountriesCards({ allCountries }) {
         </Card.Content>
       </Card >
       {/* </Card.Group> */}
-    </Container >
+    </div>
   )
 }
 

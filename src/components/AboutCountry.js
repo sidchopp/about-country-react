@@ -117,7 +117,7 @@ function AboutCountry() {
       <Segment style={{ margin: '30px' }} padded raised  >
         <Header as='h3' >Info about other Countries</Header>
       </Segment>
-      {errorMessage ? errorMessage : mapAllCountries}
+      <Card.Group> {mapAllCountries}</Card.Group>
     </div>
   )
 }

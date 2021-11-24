@@ -13,3 +13,9 @@
 .uppercase {
   text-transform: uppercase;
 }
+
+.all-country-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

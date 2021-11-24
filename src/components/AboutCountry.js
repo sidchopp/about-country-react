@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
-//import { Icon } from 'semantic-ui-react'
+
+import { Card, Segment, Header } from 'semantic-ui-react'
 
 // components
 import CountryCard from './CountryCard';
 import Loading from './Loading';
+import AllCountriesCards from './AllCountriesCards';
 
 function AboutCountry() {
 
@@ -11,6 +13,7 @@ function AboutCountry() {
   const [myCity, setMyCity] = useState('');
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+  const [allCountries, setAllCountries] = useState([])
 
   // Promisifying the Geolocation API
   const getPosition = function () {
@@ -51,11 +54,20 @@ function AboutCountry() {
       const data = await response.json();
       //console.log('Data:', data);
 
+      const responseAll = await fetch('https://restcountries.com/v2/all');
+      if (!responseAll.ok) throw new Error("Problem getting country")
+
+      const dataAll = await responseAll.json();
+      // console.log('Data:', dataAll);
+
       // after getting our data, we want loading to stop
       setLoading(false)
 
       // Updating our  location state with data
       setLocation(data)
+
+      //Updating with All countries
+      setAllCountries(dataAll);
 
       // For Voice message to the User
       const speak = (msg) => {
@@ -87,6 +99,11 @@ function AboutCountry() {
     return <CountryCard key={country.name.official} cardInfo={country} cardCity={myCity} />
   })
 
+  const mapAllCountries = allCountries.map((country) => {
+    // return console.log(country.name);
+    return <AllCountriesCards key={country.name} allCountries={country} />
+  })
+
   // if data is not fetched,show loader
   if (loading) {
     return (
@@ -97,6 +114,10 @@ function AboutCountry() {
     <div>
       {/* Conditional rendering of error and Location */}
       {errorMessage ? errorMessage : mapLocation}
+      <Segment style={{ margin: '30px' }} padded raised  >
+        <Header as='h3' >Info about other Countries</Header>
+      </Segment>
+      {errorMessage ? errorMessage : mapAllCountries}
     </div>
   )
 }

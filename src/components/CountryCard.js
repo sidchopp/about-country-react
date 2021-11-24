@@ -11,7 +11,7 @@ import '../App.css'
 function CountryCard({ cardInfo, cardCity }) {
   return (
     // To make container small use "text" attribute
-    <Container style={{ marginTop: "50px" }} >
+    <Container text style={{ marginTop: "50px" }} >
       <Card raised className='font' style={{ padding: '25px' }} fluid centered>
         <Divider horizontal><Icon name='map signs' />
           {" "} Your Location

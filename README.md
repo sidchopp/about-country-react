@@ -12,4 +12,4 @@ Imagine you are at a very beautiful place and you want to know its exact address
 
 ## Current Location Version 2.0 (launched on 24th Nov. 2021)
 
-In the 2nd version, a User can see everything from Version 1.0. On top of that a user can search a country from a list of about 250 countries and get some useful info about that country.
+In the 2nd version 2.0, an addition is made. Now a User of this App can also search for a country, from a long list of countries available, and get some useful info about that country.

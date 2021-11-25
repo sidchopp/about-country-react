@@ -128,7 +128,7 @@ function AboutCountry() {
           <SearchByCountryName setSearchCountry={setSearchCountry} />
         </Header>
       </Segment>
-      <Card.Group> {mapAllCountries}</Card.Group>
+      <Card.Group centered> {mapAllCountries}</Card.Group>
     </div>
   )
 }

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
-
 import { Card, Segment, Header, Icon, Divider } from 'semantic-ui-react'
 
-// components
+// Components
 import CountryCard from './CountryCard';
 import Loading from './Loading';
 import AllCountriesCards from './AllCountriesCards';
 import SearchByCountryName from './SearchByCountryName'
 
 function AboutCountry() {
-
+  //States
   const [location, setLocation] = useState([]);
   const [myCity, setMyCity] = useState('');
   const [loading, setLoading] = useState(true);
@@ -25,17 +24,13 @@ function AboutCountry() {
   };
 
   const whereAmI = async function () {
-
     // to make sure loading is true when we are fetching data
     setLoading(true);
-
     try {
       // Geo Location
       const pos = await getPosition();
-
       // changing the names by de structuring the pos object that we receive
       const { latitude: lat, longitude: lng } = pos.coords;
-
       // Reverse geocoding(i.e  converting a location as described by geographic coordinates (latitude, longitude) to a human-readable address or place) 
       // const responseGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
       const responseGeo = await fetch(`https://us1.locationiq.com/v1/reverse.php?key=pk.54613f9762655306fcea44c566aadc1c&lat=${lat}&lon=${lng}&format=json`)
@@ -77,16 +72,15 @@ function AboutCountry() {
         [sp.voice] = speechSynthesis.getVoices();
         speechSynthesis.speak(sp);
       };
-
       speak(`Hi there, you are at ${city}`)
 
       //Updating the myCity state with present city of user
       setMyCity(city)
-
     } catch (err) {
       // if there is error we want to stop loading
       setLoading(false)
       // console.log('This is the error:', err.message);
+
       const error = `ERROR: "${err.message}". Please allow the site to access your location and refresh the page. 😊`;
       setErrorMessage(error);
     }
@@ -131,7 +125,6 @@ function AboutCountry() {
       <Header> <Icon name="angle double down" /></Header>
       <Segment style={{ margin: '30px' }} padded raised  >
         <Header as='h4' >
-
           <SearchByCountryName setSearchCountry={setSearchCountry} />
         </Header>
       </Segment>

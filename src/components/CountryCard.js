@@ -69,9 +69,6 @@ function CountryCard({ cardInfo, cardCity }) {
               </span>
             </div>
             <div>
-              {/* <Icon name='comments' /> */}
-              {/* <span><b>  Main Language <Icon name='caret right' /></b></span>
-            <span>{cardInfo.languages}</span> */}
             </div>
             <div>
               <Icon name='expand' />
@@ -82,9 +79,6 @@ function CountryCard({ cardInfo, cardCity }) {
             </div>
           </Card.Description>
         </Card.Content>
-        {/* <Card.Content extra>
-        <Icon name='clock' /> Time Zone(s): {cardInfo.timezones.toString()}
-      </Card.Content> */}
         <Button primary as='a' href={Object.values(cardInfo.maps)[0]} rel="noreferrer" target='_blank'>
           Google Map
         </Button>

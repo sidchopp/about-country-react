@@ -1,4 +1,4 @@
-# Current Location
+# Current Location Version 1.0
 
 It will "Show and Speak" an exact address based on User's location.
 
@@ -9,3 +9,7 @@ With User's permission for sharing location and speaker, this App will show and 
 ## Why to use it?
 
 Imagine you are at a very beautiful place and you want to know its exact address, like its street number, House number,Community, Pin code, etc. This App will do that job for you. It's a pretty cool thing for someone who is visiting a country from outside or someone like me who loves to explore new places and want to know the exact address to either revisit the place or want to share the exact address of an amazing place for others to visit the place. Imagine how handy it would be if, they have an "Exact Address"
+
+## Current Location Version 2.0 (launched on 24th Nov. 2021)
+
+In the 2nd version, a User can see everything from Version 1.0. On top of that a user can search a country from a list of about 250 countries and get some useful info about that country.

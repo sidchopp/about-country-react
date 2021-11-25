@@ -12,7 +12,7 @@ function CountryCard({ cardInfo, cardCity }) {
   return (
     // To make container small use "text" attribute
     <Container text style={{ marginTop: "50px" }} >
-      <Card raised className='font' style={{ padding: '25px' }} fluid centered>
+      <Card raised className='font' style={{ padding: '25px', marginBottom: "50px" }} fluid centered>
         <Divider horizontal><Icon name='map signs' />
           {" "} Your Location
         </Divider >

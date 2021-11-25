@@ -5,7 +5,7 @@ import { Card, Icon, Image, Container, Header, Button, Divider, CardDescription 
 import '../App.css'
 
 function AllCountriesCards({ allCountries }) {
-  console.log(allCountries);
+  // console.log(allCountries);
 
   return (
     <div>

@@ -8,7 +8,7 @@ With User's permission for sharing location and speaker, this App will show and 
 
 ## Why to use it?
 
-Imagine you are at a very beautiful place and you want to know its exact address, like its street number, House number,Community, Pin code, etc. This App will do that job for you. It's a pretty cool thing for someone who is visiting a country from outside or someone like me who loves to explore new places and want to know the exact address to either revisit the place or want to share the exact address of an amazing place for others to visit the place. Imagine how handy it would be if, they have an "Exact Address"
+Imagine you are at a very beautiful place and you want to know its exact address, like its street number, House number,Community, Pin code, etc. This App will do that job for you. It's a pretty cool thing for someone who is visiting a country from outside, or someone like me who loves to explore new places, and want to know the exact address - to either revisit that place or want to share that address with friends and family. Imagine how handy it would be if, you have an "Exact Address" of a place you are going to visit.
 
 ## Current Location Version 2.0 (launched on 24th Nov. 2021)
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Icon, Divider, Popup } from 'semantic-ui-react'
+import { Header, Icon, Popup } from 'semantic-ui-react'
 
 function Footer() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 // CSS
 import '../App.css'
@@ -14,29 +14,45 @@ function AllCountriesCards({ allCountries }) {
             {allCountries.name}
           </Card.Header>
           <Card.Meta >
-            Capital <Icon name='caret right' />
+            Capital:
             {allCountries.capital}
           </Card.Meta>
           <Image rounded size='small' style={{ margin: '15px' }} src={allCountries.flags.png} wrapped />
           <Card.Description>
             <div>
               <span>
-                <b>  Region<Icon name='caret right' /></b>
+                <b>  Region:</b>
               </span>
               <span> {allCountries.region} </span>
             </div>
             <div>
               <span>
-                <b>  Sub-Region<Icon name='caret right' /></b>
+                <b>  Sub-Region:</b>
               </span>
               <span>{allCountries.subregion}</span>
             </div>
             <div>
               <span>
-                <b>  Area <Icon name='caret right' /></b>
+                <b>  Area:</b>
               </span>
               <span>
-                About {+(allCountries.area / 1000).toFixed(1)} Thousand km sq.
+                {+(allCountries.area / 1000).toFixed(1)}K sq.km
+              </span>
+              <div>
+                <span>
+                  <b> Language:</b>
+                </span>
+                <span>
+                  {allCountries.languages[0].name}
+                </span>
+              </div>
+            </div>
+            <div>
+              <span>
+                <b> Population:</b>
+              </span>
+              <span>
+                {+(allCountries.population / 1000000).toFixed(4)} M
               </span>
             </div>
           </Card.Description>

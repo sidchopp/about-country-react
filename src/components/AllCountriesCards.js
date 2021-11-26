@@ -1,11 +1,11 @@
 import React from 'react'
-import { Card, Icon } from 'semantic-ui-react'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 // CSS
 import '../App.css'
 
 function AllCountriesCards({ allCountries }) {
-
+  console.log(allCountries);
   return (
     <div>
       <Card raised className='font ' style={{ padding: '25px', margin: '20px' }} >
@@ -17,6 +17,7 @@ function AllCountriesCards({ allCountries }) {
             Capital <Icon name='caret right' />
             {allCountries.capital}
           </Card.Meta>
+          <Image rounded size='small' style={{ margin: '15px' }} src={allCountries.flags.png} wrapped />
           <Card.Description>
             <div>
               <span>

@@ -20,11 +20,9 @@ function CountryCard({ cardInfo, cardCity }) {
           <Icon name="map marker alternate" />
           {cardCity}.
         </Header.Subheader>
-        <Divider horizontal >
-          <Icon name='compass' />
+        {/* <Divider horizontal ><Icon name='compass' />
           {" "} Your Country
-        </Divider>
-        <Image style={{ margin: '15px' }} src={cardInfo.flags[0]} wrapped ui={false} />
+        </Divider> */}
         <Card.Content>
           <Card.Header className='uppercase' style={{ margin: '15px', fontSize: '30px' }} >
             <Icon name='globe' />
@@ -35,6 +33,7 @@ function CountryCard({ cardInfo, cardCity }) {
             Capital <Icon name='caret right' />
             {cardInfo.capital}
           </Card.Meta>
+          <Image centered rounded size='large' style={{ margin: '15px' }} src={cardInfo.flags[0]} wrapped />
           <Card.Description>
             <div>
               <Icon name='circle' />

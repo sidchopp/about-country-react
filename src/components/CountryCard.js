@@ -7,7 +7,6 @@ import Footer from './Footer'
 // CSS
 import '../App.css'
 
-
 function CountryCard({ cardInfo, cardCity }) {
   return (
     // To make container small use "text" attribute

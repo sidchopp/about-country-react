@@ -5,12 +5,12 @@ import { Card, Image, Label } from 'semantic-ui-react'
 import '../App.css'
 
 function AllCountriesCards({ allCountries }) {
-  // console.log(allCountries);
+  console.log(allCountries);
   return (
     <div>
       <Card raised className='font ' style={{ padding: '25px', margin: '20px' }} >
-        <Label attached='top '>{allCountries.region}</Label>
         <Card.Content>
+          <Label size='large' attached='top' >{allCountries.region}</Label>
           <Card.Header className='uppercase' style={{ marginBottom: '5px' }} >
             {allCountries.name}
           </Card.Header>

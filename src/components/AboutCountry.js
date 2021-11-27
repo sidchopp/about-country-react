@@ -27,6 +27,14 @@ function AboutCountry() {
     // to make sure loading is true when we are fetching data
     setLoading(true);
     try {
+      // For all countries' Cards
+      const responseAll = await fetch('https://restcountries.com/v2/all');
+      if (!responseAll.ok) throw new Error("Problem getting country")
+      const dataAll = await responseAll.json();
+      // console.log('Data:', dataAll);
+      //Updating with All countries
+      setAllCountries(dataAll);
+
       // Geo Location
       const pos = await getPosition();
       // changing the names by de structuring the pos object that we receive
@@ -50,21 +58,10 @@ function AboutCountry() {
 
       const data = await response.json();
       //console.log('Data:', data);
-
-      const responseAll = await fetch('https://restcountries.com/v2/all');
-      if (!responseAll.ok) throw new Error("Problem getting country")
-
-      const dataAll = await responseAll.json();
-      // console.log('Data:', dataAll);
-
       // after getting our data, we want loading to stop
       setLoading(false)
-
       // Updating our  location state with data
       setLocation(data)
-
-      //Updating with All countries
-      setAllCountries(dataAll);
 
       // For Voice message to the User
       const speak = (msg) => {

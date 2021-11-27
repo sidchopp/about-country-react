@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Label } from 'semantic-ui-react'
 
 // CSS
 import '../App.css'
@@ -9,6 +9,7 @@ function AllCountriesCards({ allCountries }) {
   return (
     <div>
       <Card raised className='font ' style={{ padding: '25px', margin: '20px' }} >
+        <Label attached='top '>{allCountries.region}</Label>
         <Card.Content>
           <Card.Header className='uppercase' style={{ marginBottom: '5px' }} >
             {allCountries.name}
@@ -19,17 +20,17 @@ function AllCountriesCards({ allCountries }) {
           </Card.Meta>
           <Image rounded size='small' style={{ margin: '15px' }} src={allCountries.flags.png} wrapped />
           <Card.Description>
-            <div>
+            {/* <div>
               <span>
                 <b>  Region:</b>
               </span>
               <span> {allCountries.region} </span>
-            </div>
+            </div> */}
             <div>
               <span>
                 <b>  Sub-Region:</b>
               </span>
-              <span>{allCountries.subregion}</span>
+              <span>{[allCountries.subregion]}</span>
             </div>
             <div>
               <span>

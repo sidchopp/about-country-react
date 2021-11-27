@@ -5,7 +5,7 @@ import { Card, Image, Label } from 'semantic-ui-react'
 import '../App.css'
 
 function AllCountriesCards({ allCountries }) {
-  console.log(allCountries);
+  // console.log(allCountries);
   return (
     <div>
       <Card raised className='font ' style={{ padding: '25px', margin: '20px' }} >
